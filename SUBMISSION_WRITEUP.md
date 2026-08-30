@@ -113,6 +113,6 @@ The gap represents exactly what fine-tuning injects: specific facts, exact count
 1. **`DB_SLM_Training.ipynb`**: Complete, self-contained Google Colab notebook demonstrating end-to-end data preparation, baseline evaluation (7.7%), QLoRA training (5 epochs, loss 0.7715), post-training evaluation (70.5%), and adapter export.
 2. **`db_slm_adapter.zip`** (414 MB): Trained LoRA adapter weights ready to be merged into `Qwen2.5-Coder-7B-Instruct`.
 3. **`data_prep/` & `database/`**: Automated data extraction and serialization pipelines for both `retail.db` and `mimic.db`.
-4. **`app.py`**: Interactive Streamlit dashboard for querying the model.
+4. **`eval/` & `training/`**: Local evaluation benchmark scripts and QLoRA fine-tuning code.
 
 **Key Finding:** Relational databases cannot be treated as flat text documents. Fine-tuning an SLM on database knowledge requires **three-tiered distillation**: structural schema narration, deterministic SQL aggregations, and serialized row archetypes. This yields high factual fidelity (+62.8% improvement) while preserving the model's core reasoning abilities.

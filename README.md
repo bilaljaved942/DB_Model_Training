@@ -120,26 +120,24 @@ DB_Training_Task/
 │   ├── evaluate.py            # Before vs. After benchmark scoring framework
 │   └── eval_baseline.json     # Baseline scoring logs
 │
-├── db_slm_adapter/            # Exported LoRA Adapter Weights (Safetensors & Configs)
-│   ├── adapter_model.safetensors
-│   ├── adapter_config.json
-│   ├── tokenizer.json
-│   └── training_summary.json
-│
-└── app.py                     # Streamlit Interactive Chat Dashboard
+└── db_slm_adapter/            # Exported LoRA Adapter Weights (Safetensors & Configs)
+    ├── adapter_model.safetensors
+    ├── adapter_config.json
+    ├── tokenizer.json
+    └── training_summary.json
 ```
 
 ---
 
 ## 🚀 Step-by-Step Reproduction Guide
 
-### Option A: Run in Google Colab (Recommended)
+### Option A: Run in Google Colab (Recommended — GPU)
 1. Open [Google Colab](https://colab.research.google.com).
 2. Upload [`DB_SLM_Training.ipynb`](DB_SLM_Training.ipynb).
 3. Set runtime: **Runtime** ➔ **Change runtime type** ➔ **T4 GPU**.
-4. Click **Runtime** ➔ **Run all**. The entire data prep, baseline test, QLoRA training, and evaluation will execute in ~5 minutes.
+4. Click **Runtime** ➔ **Run all**. The entire data prep, baseline test, QLoRA training, before/after evaluation, and live querying in Step 12 will execute in ~5 minutes.
 
-### Option B: Run Locally
+### Option B: Local Data Preparation Pipeline
 
 ```bash
 # 1. Clone repository & create virtual environment
@@ -152,11 +150,8 @@ pip install -r requirements.txt
 # 3. Generate SQLite databases from raw data
 python database/db_setup.py
 
-# 4. Generate the training dataset
+# 4. Generate the instruction-tuning datasets (JSONL)
 python data_prep/dataset_builder.py
-
-# 5. Launch the Streamlit interactive dashboard
-streamlit run app.py
 ```
 
 ---
