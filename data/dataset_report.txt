@@ -1,0 +1,26 @@
+============================================================
+  TRAINING DATASET REPORT
+============================================================
+
+Training examples  : 101
+Validation examples: 12
+Total              : 113
+
+Files generated:
+  /Users/macpro/Desktop/DB_Training_Task/data/training_dataset.jsonl
+  /Users/macpro/Desktop/DB_Training_Task/data/validation_dataset.jsonl
+  /Users/macpro/Desktop/DB_Training_Task/data/training_dataset_alpaca.jsonl
+
+Format: ChatML (messages list with system/user/assistant roles)
+Compatible with: Qwen2.5, Phi-3.5, LLaMA-3, Mistral (via TRL SFTTrainer)
+
+Sample examples:
+
+Q: What is the customer segment classification in the retail database?...
+A: Customers in the Online Retail database are classified into three segments: Domestic_UK for customers based in the United Kingdom, EU_Wholesale for European customers outside the UK, and International...
+
+Q: What is the average ICU length of stay in MIMIC?...
+A: ICU care unit 'Coronary Care Unit (CCU)' had 13 stay(s) with average length of stay 5.43 days....
+
+Q: What is the average ICU length of stay in MIMIC?...
+A: There are 140.0 ICU stays across 100.0 patients. The average ICU length of stay is 3.68 days, with a median of 2.16 days....

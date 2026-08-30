@@ -1,0 +1,240 @@
+[
+  {
+    "id": "S1",
+    "category": "schema",
+    "source": "retail",
+    "question": "What tables are in the Online Retail database?",
+    "answer": "The retail database has tables: customers, products, invoices, invoice_items, patient_customer_bridge.",
+    "overall_score": 1.0,
+    "keyword_score": 1.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [],
+    "numbers_missing": []
+  },
+  {
+    "id": "S2",
+    "category": "schema",
+    "source": "mimic",
+    "question": "What does hospital_expire_flag mean in MIMIC?",
+    "answer": "hospital_expire_flag=1 means the patient died in-hospital (in-hospital mortality).",
+    "overall_score": 0.825,
+    "keyword_score": 0.75,
+    "numeric_score": 1.0,
+    "keywords_missing": [
+      "death"
+    ],
+    "numbers_missing": []
+  },
+  {
+    "id": "S3",
+    "category": "schema",
+    "source": "retail",
+    "question": "How are invoices and products linked in the retail database?",
+    "answer": "The databases are linked via patient_customer_bridge with 100 customer_id to subject_id mappings.",
+    "overall_score": 0.3,
+    "keyword_score": 0.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [
+      "invoice_items",
+      "stock_code",
+      "invoice_no"
+    ],
+    "numbers_missing": []
+  },
+  {
+    "id": "S4",
+    "category": "schema",
+    "source": "mimic",
+    "question": "What does seq_num=1 mean in the MIMIC diagnoses table?",
+    "answer": "I can answer questions about the Online Retail and MIMIC-IV databases.",
+    "overall_score": 0.3,
+    "keyword_score": 0.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [
+      "primary",
+      "principal",
+      "diagnosis"
+    ],
+    "numbers_missing": []
+  },
+  {
+    "id": "S5",
+    "category": "schema",
+    "source": "cross",
+    "question": "How are the retail and MIMIC databases linked to each other?",
+    "answer": "The databases are linked via patient_customer_bridge with 100 customer_id to subject_id mappings.",
+    "overall_score": 1.0,
+    "keyword_score": 1.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [],
+    "numbers_missing": []
+  },
+  {
+    "id": "F1",
+    "category": "factual",
+    "source": "mimic",
+    "question": "How many patients are in the MIMIC-IV demo database?",
+    "answer": "The MIMIC-IV demo contains 100 patients.",
+    "overall_score": 1.0,
+    "keyword_score": 1.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [],
+    "numbers_missing": []
+  },
+  {
+    "id": "F2",
+    "category": "factual",
+    "source": "mimic",
+    "question": "How many hospital admissions are in MIMIC?",
+    "answer": "There are 275 hospital admissions in MIMIC.",
+    "overall_score": 1.0,
+    "keyword_score": 1.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [],
+    "numbers_missing": []
+  },
+  {
+    "id": "F3",
+    "category": "factual",
+    "source": "retail",
+    "question": "How many unique customers are in the retail database?",
+    "answer": "There are 4,372 unique customers in the Online Retail database.",
+    "overall_score": 0.65,
+    "keyword_score": 0.5,
+    "numeric_score": 1.0,
+    "keywords_missing": [
+      "4372"
+    ],
+    "numbers_missing": []
+  },
+  {
+    "id": "F4",
+    "category": "factual",
+    "source": "mimic",
+    "question": "How many ICU stays are in the MIMIC database?",
+    "answer": "There are 140 ICU stays in the MIMIC database.",
+    "overall_score": 1.0,
+    "keyword_score": 1.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [],
+    "numbers_missing": []
+  },
+  {
+    "id": "F5",
+    "category": "factual",
+    "source": "retail",
+    "question": "How many invoices are in the retail database and what percentage are cancellations?",
+    "answer": "I can answer questions about the Online Retail and MIMIC-IV databases.",
+    "overall_score": 0.0,
+    "keyword_score": 0.0,
+    "numeric_score": 0.0,
+    "keywords_missing": [
+      "25,900",
+      "25900",
+      "3,836",
+      "cancell"
+    ],
+    "numbers_missing": [
+      25900.0
+    ]
+  },
+  {
+    "id": "F6",
+    "category": "factual",
+    "source": "mimic",
+    "question": "How many lab results are in MIMIC?",
+    "answer": "I can answer questions about the Online Retail and MIMIC-IV databases.",
+    "overall_score": 0.0,
+    "keyword_score": 0.0,
+    "numeric_score": 0.0,
+    "keywords_missing": [
+      "107,727",
+      "107727"
+    ],
+    "numbers_missing": [
+      107727.0
+    ]
+  },
+  {
+    "id": "F7",
+    "category": "factual",
+    "source": "cross",
+    "question": "How many retail customers are linked to MIMIC patient records?",
+    "answer": "There are 4,372 unique customers in the Online Retail database.",
+    "overall_score": 0.0,
+    "keyword_score": 0.0,
+    "numeric_score": 0.0,
+    "keywords_missing": [
+      "100"
+    ],
+    "numbers_missing": [
+      100.0
+    ]
+  },
+  {
+    "id": "B1",
+    "category": "business",
+    "source": "retail",
+    "question": "Which country generates the most retail revenue and why might that be?",
+    "answer": "I can answer questions about the Online Retail and MIMIC-IV databases.",
+    "overall_score": 0.3,
+    "keyword_score": 0.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [
+      "United Kingdom",
+      "UK",
+      "domestic"
+    ],
+    "numbers_missing": []
+  },
+  {
+    "id": "B2",
+    "category": "business",
+    "source": "retail",
+    "question": "What does the cancellation rate tell us about the retail business?",
+    "answer": "I can answer questions about the Online Retail and MIMIC-IV databases.",
+    "overall_score": 0.3,
+    "keyword_score": 0.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [
+      "cancell",
+      "return",
+      "refund"
+    ],
+    "numbers_missing": []
+  },
+  {
+    "id": "B3",
+    "category": "business",
+    "source": "mimic",
+    "question": "What clinical insight does the in-hospital mortality rate provide?",
+    "answer": "I can answer questions about the Online Retail and MIMIC-IV databases.",
+    "overall_score": 0.3,
+    "keyword_score": 0.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [
+      "mortality",
+      "death",
+      "4.7",
+      "13"
+    ],
+    "numbers_missing": []
+  },
+  {
+    "id": "B4",
+    "category": "business",
+    "source": "cross",
+    "question": "If I want to study patient purchasing behaviour after discharge, what data would I combine?",
+    "answer": "I can answer questions about the Online Retail and MIMIC-IV databases.",
+    "overall_score": 0.3,
+    "keyword_score": 0.0,
+    "numeric_score": 1.0,
+    "keywords_missing": [
+      "bridge",
+      "admissions",
+      "invoice",
+      "customer"
+    ],
+    "numbers_missing": []
+  }
+]
