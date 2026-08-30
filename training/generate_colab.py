@@ -429,7 +429,7 @@ for q in TEST_QUESTIONS:
     print(f'A: {a[:200]}')
     print()"""),
 
-        md_cell("## Step 10: Before vs After Evaluation"),
+        md_cell("## Step 10: Before vs After Detailed Evaluation\n\nRuns all 13 benchmark queries through both the untrained Base Model and the Fine-Tuned Model, displaying the exact text outputs and comparative scores."),
         code_cell("""EVAL = [
     {'q': 'How many patients in MIMIC?',                 'must': ['100'],             'num': 100},
     {'q': 'What is the in-hospital mortality rate?',     'must': ['5.5', '15'],       'num': 5.5},
@@ -449,27 +449,38 @@ for q in TEST_QUESTIONS:
 def score(ans, case):
     return sum(1 for k in case['must'] if k.lower() in ans.lower()) / len(case['must'])
 
-print(f'{\"Question\":<52} {\"Before\":>8} {\"After\":>7}')
-print('-'*70)
 b_scores, f_scores = [], []
-for c in EVAL:
-    b = ask(c['q'])
-    f = ask_ft(c['q'])
-    bs = score(b, c)
-    fs = score(f, c)
+print('=' * 80)
+print('📊 BEFORE VS AFTER COMPARATIVE EVALUATION (WITH FULL OUTPUTS)')
+print('=' * 80)
+
+for idx, c in enumerate(EVAL, 1):
+    b_ans = ask(c['q'])
+    f_ans = ask_ft(c['q'])
+    bs = score(b_ans, c)
+    fs = score(f_ans, c)
     b_scores.append(bs)
     f_scores.append(fs)
-    bi = '✅' if bs>=0.7 else ('⚠️' if bs>=0.4 else '❌')
-    fi = '✅' if fs>=0.7 else ('⚠️' if fs>=0.4 else '❌')
-    print(f\"{c['q'][:50]:<52} {bi}{bs:.0%}  {fi}{fs:.0%}\")
+    
+    bi = '✅ PASS' if bs >= 0.7 else ('⚠️ PARTIAL' if bs >= 0.4 else '❌ FAIL')
+    fi = '✅ PASS' if fs >= 0.7 else ('⚠️ PARTIAL' if fs >= 0.4 else '❌ FAIL')
+    
+    print(f'\\n[{idx}/13] Q: {c[\"q\"]}')
+    print(f'  🔴 Base Model Answer ({bi} - {bs:.0%}):')
+    print(f'     {b_ans[:180]}...')
+    print(f'  🟢 Fine-Tuned Model Answer ({fi} - {fs:.0%}):')
+    print(f'     {f_ans[:180]}...')
+    print('-' * 80)
 
 b_avg = sum(b_scores)/len(b_scores)
 f_avg = sum(f_scores)/len(f_scores)
 b_pass = sum(1 for s in b_scores if s>=0.7)
 f_pass = sum(1 for s in f_scores if s>=0.7)
-print('-'*70)
-print(f'{"TOTAL":<52} {b_pass}/{len(EVAL)} {b_avg:.0%}  {f_pass}/{len(EVAL)} {f_avg:.0%}')
-print(f'\\nImprovement: {b_avg:.0%} → {f_avg:.0%} (+{(f_avg-b_avg):.0%})')"""),
+
+print(f'\\nSUMMARY:')
+print(f'Base Model Score       : {b_pass}/{len(EVAL)} passed ({b_avg:.1%})')
+print(f'Fine-Tuned Model Score : {f_pass}/{len(EVAL)} passed ({f_avg:.1%})')
+print(f'Overall Improvement    : {b_avg:.1%} ➔ {f_avg:.1%} (+{(f_avg-b_avg):.1%})')"""),
 
         md_cell("## Step 11: Save Adapter & Download"),
         code_cell("""import zipfile, json
