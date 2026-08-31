@@ -112,14 +112,6 @@ DB_Training_Task/
 │   ├── db_setup.py            # Loads raw Excel & CSVs into normalized SQLite databases
 │   └── schema_graph.py        # Runtime schema introspection
 │
-├── training/                  # Training Scripts & Generators
-│   ├── train.py               # Local QLoRA fine-tuning script
-│   └── generate_colab.py      # Programmatic generator for the Colab notebook
-│
-├── eval/                      # Evaluation Suite
-│   ├── evaluate.py            # Before vs. After benchmark scoring framework
-│   └── eval_baseline.json     # Baseline scoring logs
-│
 └── db_slm_adapter/            # Exported LoRA Adapter Weights (Safetensors & Configs)
     ├── adapter_model.safetensors
     ├── adapter_config.json
