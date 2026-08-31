@@ -1,11 +1,5 @@
 # Multi-Database Small Language Model (SLM) for Schema & Business Logic Reasoning
 
-> **Candidate:** Bilal Javed  
-> **Evaluation:** AI Engineer Leadership Evaluation Task — Adept Tech Solutions (Dr. Wasim)  
-> **Dataset Sources:** [MIMIC-IV Clinical Database Demo 2.2](https://physionet.org/content/mimic-iv-demo/2.2/) & [UCI Online Retail Database](https://archive.ics.uci.edu/dataset/352/online+retail)
-
----
-
 ## 📌 Executive Summary
 
 This repository implements an end-to-end framework for **training a Small Language Model (SLM) on multi-relational enterprise databases**, allowing the model to act as a **domain-grounded replica** of the underlying data. 

@@ -1,9 +1,4 @@
 # Training a Small Language Model as a Database Replica
-**Candidate:** Bilal Javed | **Submission Date:** August 31, 2026  
-**To:** amad.gakkhar@adept-techsolutions.com  
-**Repository:** [https://github.com/bilaljaved942/DB_Model_Training](https://github.com/bilaljaved942/DB_Model_Training)  
-
----
 
 ## 1. Problem Analysis: Framing & Complexity
 
